@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> first web page</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+      <script>
+
+
+		  // the animal global declaration
+          let ourAnimalList = [
+            'one','two','three','four'
+          ];
+		  // first trial function
+        /*function myFunction2() {
+          const userInput = prompt("what is the name of animal you have?");
+          let correct, incorrect;
+          for(let i=0; i<ourAnimalList.length; i++){
+          if (ourAnimalList[i]===userInput){
+             correct = ourAnimalList[i];
+          }else if(ourAnimalList[i]!==userInput){
+             incorrect = userInput;
+          }
+        };
+        if(correct){
+            alert('correct');
+        }else if (incorrect) {
+          alert('incorrect');
+        }
+      }*/
+
+
+//main function that does the work
+      function mainFunction() {
+        let txt;
+
+        let userInput = [];
+        userInput = prompt("what is the name of animal you have?").toUpperCase();
+        if (userInput==""){
+          alert("pls write something").error();;
+        }
+        const UserName = prompt("pls what is your name?").toUpperCase();
+        const n = ourAnimalList.includes(userInput);
+          if(n){
+          alert("WOW THE NAME " + userInput + " YOU ENTERED IS IN THE LIST");
+        }else {
+
+          if (confirm(UserName + " WE DONT HAVE THIS WORD \n "+ userInput + " \n If You want to Add this Word for Us Click ok")) {
+              ourAnimalList.push(userInput);
+              document.getElementById("demo").innerHTML = ("THANK YOU " + UserName + " FOR ADDING THIS " +  userInput +" IN OUR LIST. <br /> NEXT TIME YOU SEARCH, WE WON'T MISS IT" )
+          } else {
+              alert("YOU DON'T WANT TO ADD IT? OK. NO PROBLEM");
+
+          }
+
+        }
+
+      }
+      </script>
+
+    </head>
+
+ <body style="background-color: rgba(25, 10, 15, 0.5);">
+   <div style="width:600px; height:600px; background-color: purple; margin: 0 auto; border-radius:   15px 15px">
+     <h1 style="text-align:center; color: white; background-color:black; border-radius: 15px 15px 15px 15px">Put any Animal name and i will tell you if its here</h1>
+      <br />
+     <marquee><h2>Give it a try</h2></marquee>
+
+     <h1> Do you wish to play? click the button below </h1>
+     <button type="button" name="button" onclick="mainFunction()" style="color:red;
+     background-color: #4CAF50; /* Green */
+         border: none;
+         color: white;
+         padding: 20px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 0 250px;
+         cursor: pointer;
+        border-radius: 95%;">CLICK ME</button>
+	   
+   <p id="demo" style="background-color:forestgreen; color: white; font-weight: bold; width:  70%; margin: 30px auto; padding: 10px"></p>
+	
+   
+ </div>
+ </body>
+</html>
