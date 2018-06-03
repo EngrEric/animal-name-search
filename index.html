@@ -6,9 +6,9 @@
       <script>
 
 
-		  // the animal global declaration
+		  // the animal array global declaration
           let ourAnimalList = [
-            'goat','cow','cock','sheep','lion'
+            'GOAT','COW','COCK','SHEEP','LION'
           ];
 		  // first trial function
         /*function myFunction2() {
@@ -31,17 +31,14 @@
 
 //main function that does the work
       function mainFunction() {
-        let txt;
-
-        let userInput = [];
+       
+        let userInput;
         userInput = prompt("what is the name of animal you have?").toUpperCase();
-        if (userInput==""){
-          alert("pls write something").error();;
-        }
+        
         const UserName = prompt("pls what is your name?").toUpperCase();
         const n = ourAnimalList.includes(userInput);
           if(n){
-          alert("WOW THE NAME " + userInput + " YOU ENTERED IS IN THE LIST");
+			  document.getElementById("demo").innerHTML= "WOW THE NAME " + userInput + " YOU ENTERED IS IN THE LIST";
         }else {
 
           if (confirm(UserName + " WE DONT HAVE THIS WORD \n "+ userInput + " \n If You want to Add this Word for Us Click ok")) {
